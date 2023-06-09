@@ -1,4 +1,4 @@
-##Ações nos templates
+## Ações nos templates ##
 Ao criar um novo template é possível fazer ações customizadas no mesmo.
 Essas ações podem incluir uma ação da plataforma, como enviar mensagem em um grupo de whatsapp, enviar um email, criar uma reunião no google meeting, entre outros.
 

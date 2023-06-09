@@ -1,13 +1,13 @@
-#Integrações Lifty API
+# Integrações Lifty API #
 Para usar as integrações da API Lifty é necessário antes de tudo conseguir uma API de acesso para sua empresa.
 Em casos de dúvidas sobre como conseguir a API key entre em contato pelo e-mail: *victor@lifty.com.br*
 
 
-##Whatsapp API
+## Whatsapp API ##
 Aqui estão descritos os endpoints para integrações com API do whatsapp.
 São operações para ler QRCodes, ativar novos números, pausar, despausar, ou remover sessões.
 
-###Obter status de conexão com whatsapp
+### Obter status de conexão com whatsapp ###
 
 *URL:*
 >https://integration-gateway-prod-8xgj7n6l.uc.gateway.dev/integration/bot/${id}/whatsapp?key=${apiKey}
@@ -42,7 +42,7 @@ Abaixo estão os principais status que a API retorna:
 
 >QRCODE => A conexão está aguardando a leitura do QRCode.
 
-###Conectar um novo whatsapp ao bot
+### Conectar um novo whatsapp ao bot ###
 *URL:*
 >https://integration-gateway-prod-8xgj7n6l.uc.gateway.dev/integration/bot/${id}/startWhatsapp?key=${apiKey}
 
@@ -81,7 +81,7 @@ Esse timestamp não afeta o serviço que retorna a imagem mas evita que o navega
 >Basta fazer um pulling na url de status até o status mudar para CONNECTED. Também usamos o intervalo de 5s.
 Na verdade fazemos sempre o pulling do status, e se ainda é QRCODE, aí sim fazemos o refresh da imagem, caso seja CONNECTED então fechamos o popup e mostramos "Conexão ativada".
 
-###Pausar um bot para um numero especifico
+### Pausar um bot para um numero especifico ###
 
 *URL:*
 >https://integration-gateway-prod-8xgj7n6l.uc.gateway.dev/integration/bot/${id}/pause/${numero}?key=${apiKey}
@@ -94,7 +94,7 @@ Na verdade fazemos sempre o pulling do status, e se ainda é QRCODE, aí sim faz
 Onde número é o número de telefone pra o qual o bot deve parar de responder, no formato DDI + DDD + NUMERO. Ex: 554899991234
 Onde apiKey é a chave de acesso da sua empresa descrita no inicio desse documento.
 
-###Resumir um bot para um numero especifico
+### Resumir um bot para um numero especifico ###
 
 *URL:*
 >https://integration-gateway-prod-8xgj7n6l.uc.gateway.dev/integration/bot/${id}/resume/${numero}?key=${apiKey}
@@ -107,7 +107,7 @@ Onde apiKey é a chave de acesso da sua empresa descrita no inicio desse documen
 Onde número é o número de telefone pra o qual o bot deve parar de responder, no formato DDI + DDD + NUMERO. Ex: 554899991234
 Onde apiKey é a chave de acesso da sua empresa descrita no inicio desse documento.
 
-###Desconectar um whatsapp do bot
+### Desconectar um whatsapp do bot ###
 
 *URL:*
 >https://integration-gateway-prod-8xgj7n6l.uc.gateway.dev/integration/bot/${id}/stopWhatsapp?key=${apiKey}

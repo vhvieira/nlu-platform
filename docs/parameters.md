@@ -1,4 +1,4 @@
-##Parametros nos templates
+## Parametros nos templates ##
 Dentro do fluxo de um template é possível definir parametros que terão seus valores configurados por cada bot.
 Geralmente são mensagens de boas vindas, e mensagens de atendimento do fluxo de conversa, mas podem ser parametros que ativam e desativam funções ou até mesmo senhas e valores usados em integrações externas.
 A sintaxe para utilizar um parametro na plataforma é muito simples:
@@ -12,7 +12,7 @@ Dentro do Admin UI, nas configurações avançadas do template é que são criad
 
 ![PARAM_ADMIN](./images/parametersAdmin.jpg)
 
-###Criando parametros
+### Criando parametros ###
 Ao criar novos parametros é necessário definir o nome do parametro que é como ele será utilizado na tag ${}
 Além disso é necessário colocar um valor padrão para o mesmo (inicial), e uma descrição para o parametro, lembrando que essa descrição será visualizada no dashboard.
 
@@ -24,7 +24,7 @@ Parametros não modificavéis apenas serão utilizados internamente no template,
 ![PARAM_CREATE](./images/parametersCreate.jpg)
 tela de criação de parametro
 
-###Modificando parametros por bot
+### Modificando parametros por bot ###
 Conforme explicado acima, parametros de robo podem ser modificados para cada bot, e isso é feito dentro do dashboard.
 
 ![PARAM_EDITING](./images/parametersDashboard.jpg)
@@ -33,7 +33,7 @@ Como acessar os parametros no sistema.
 ![PARAM_EDITING](./images/parametersEditing.jpg)
 Tela de edição de parametros.
 
-###Parametros de sistema
+### Parametros de sistema ###
 Além dos parametros criados no template, existem outros parametros disponíveis pelo próprio sistema que podem serem utilizados na plataforma.
 Abaixo a lista com nomes e descrição:
 
@@ -47,7 +47,7 @@ Abaixo a lista com nomes e descrição:
 | templateName   | Parametro que retorna o nome do template        |
 | dialogflowProject   | Parametro que retorna o projeto dialogflow do template        |
 
-###Parametros de comportamento
+### Parametros de comportamento ###
 São parametros que podem alterar o comportamento do fluxo por template ou por robo.
 Para alterar o comportamento basta incluir esses parametros no template e alterar seu valor por template ou por bot.
 
@@ -60,7 +60,7 @@ Para alterar o comportamento basta incluir esses parametros no template e altera
 | BOT_REQUIRES_SESSION     | Quando ativado (true) faz o bot exigir uma comunicação anterior com o número, respondendo mensagens de números apenas após disparos iniciados pelo bot | false     |
 | AGENDA_USAR_SLOTS     | Quanto ativado (true) exibe os horários disponíveis para agendamento como listas (combos)  | false     |
 
-###Parametros de mensagens padrão
+### Parametros de mensagens padrão ###
 São mensagens comuns no fluxo de todos robos.
 Para alterar essas mensagens basta incluir esses parametros no template e alterar seu valor por template ou por bot.
 
