@@ -1,0 +1,65 @@
+version: '3.8'
+#network config
+networks:
+  default:
+    external: false
+    name: nlu-services
+#container/apps
+services:
+  whatsapp-integration:
+    image: lifty/whatsapp-api:latest
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    volumes:
+      - D:\Dev\lifty\temp\tokens:/tokens
+      - D:\Dev\lifty\temp\files:/files
+    environment:
+      - HTTPS=1
+      - CONVERSATION_API=http://172.17.0.1:8081/conversation-api
+      - TOKEN_DIR=/tokens
+      - IMAGE_DIR=http://files.botty.com.br/images
+      - AUDIO_DIR=https://storage.googleapis.com/lifty-file-storage/audios
+      - BUCKET_NAME=lifty-file-storage
+      - BUCKET_FOLDER_AUDIOS=audios
+      - BUCKET_FOLDER_FILES=files
+      - SERVICE_KEY=credentials/default.json
+      - WHATSAPP_VERSION=2.2324.7
+      - PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+      - DISABLE_BUTTONS=android
+      - MAX_FAILURES=5
+    ports:
+      - 3333:3333
+  conversation-api:
+    image: liftysolutions/conversation-api:latest
+    volumes:
+      - ./credentials:/credentials
+      - ./config/bots:/config/bots
+    environment:
+      BOT_API: https://{SERVER}/bot-api
+      LOCALHOST: 172.17.0.1
+      GOOGLE_APPLICATION_CREDENTIALS: /credentials/default.json
+      AUDIO_PATH: gs://lifty-file-storage/audios/
+      BOTS_CACHE_LOCATION: /config/bots/
+      spring.profiles.active: dev
+    ports:
+      - 8081:8081
+      - 8443:8443
+      - 8090:8090
+  actions-api:
+    image: liftysolutions/actions-api:latest
+    volumes:
+      - ./credentials:/credentials
+      - ./agenda-api/config:/config
+    environment:
+      env-name: dev
+      LOCALHOST: 172.17.0.1
+      BOT_API: https://{SERVER}/bot-api
+      BUCKET_NAME: lifty-file-storage
+      GOOGLE_APPLICATION_CREDENTIALS: /credentials/default.json
+      AGENDA_EMAIL: botty@lifty.com.br
+      BOT_CREATION_EMAIL: victor@lifty.com.br
+    ports:
+      - 7080:7080
+      - 7443:7443
+      - 7090:7090
