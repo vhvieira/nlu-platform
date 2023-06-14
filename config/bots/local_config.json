@@ -1,0 +1,197 @@
+{
+    "id": "local",
+    "botName": "SOULBOT",
+    "botType": "Grátis",
+    "tenantId": "sistemas@soul.med.br",
+    "instanceId": "WpCkMtE3tqJeWqDmzC8G",
+    "templateId": "wS6maiKWo57rEs08xmnv",
+    "templateName": "Template Soul",
+    "parameters": [
+        {
+            "modifiable": true,
+            "advanced": false,
+            "parameterDescription": "MENSAGEM EM CASO CANCELAMENTO",
+            "parameterName": "MENSAGEM_CANCELAMENTO",
+            "parameterValue": "Que pena, sua vaga estava garantida! #break{2000}  Mas entendemos os imprevistos.  #break{2000}  Mas não queremos deixar você sem atendimento. Clique abaixo para remarcar outro dia. #break{4000}  #BUTTONS-->  #title{Ou você pode escolher👇🏻}  #button{MENU INICIAL} --* #break{3000} Obrigado e é um dever nosso prezar pelo melhor atendimento na nossa cidade. "
+        },
+        {
+            "modifiable": true,
+            "advanced": false,
+            "parameterDescription": "Telefone de contato",
+            "parameterName": "TELEFONE_CONTATO",
+            "parameterValue": "(11) 3003-0000"
+        },
+        {
+            "modifiable": true,
+            "advanced": false,
+            "parameterDescription": "Mensagem de apresentacao do bot",
+            "parameterName": "MENSAGEM_BOAS_VINDAS",
+            "parameterValue": "Olá! Bem-vindo(a) ao SoulBOT, seu atendente virtual de saúde com inteligência artificial. Estou aqui para ajudar você da melhor maneira possível. #break{2000} Antes de começarmos, como posso te chamar?"
+        },
+        {
+            "modifiable": true,
+            "advanced": true,
+            "parameterDescription": "Mensagem que é enviada ao usuário que envia um audio.",
+            "parameterName": "BOT_MSG_AUDIO_SUPORTE",
+            "parameterValue": "Aúdio não é suportado nesse momento: Por favor, responda em texto"
+        },
+        {
+            "modifiable": true,
+            "advanced": true,
+            "parameterDescription": "Mensagem de erro quando existem mais de uma opção para o valor informado.",
+            "parameterName": "BOT_MSG_MAIS_DE_UMA_OPCAO",
+            "parameterValue": "Mais de uma opção encontrada para a descrição informada."
+        },
+        {
+            "modifiable": true,
+            "advanced": true,
+            "parameterDescription": "Palavras reservadas que não são validadas pela plataforma neste template.",
+            "parameterName": "SKIP_WORDS_VALIDATION",
+            "parameterValue": "#"
+        },
+        {
+            "modifiable": false,
+            "advanced": true,
+            "parameterDescription": "Calendário utilizado pelo bot",
+            "parameterName": "CALENDAR_TECH_ID",
+            "parameterValue": "c_912dspu9dajdnm7n9hsa0a0hvc@group.calendar.google.com"
+        },
+        {
+            "modifiable": false,
+            "advanced": true,
+            "parameterDescription": "Arquivo com configuração de erros para o bot.\t",
+            "parameterName": "ERROR_HANDLING_FILE",
+            "parameterValue": "https://storage.googleapis.com/lifty-botty-config/errors_agenda.xls"
+        },
+        {
+            "modifiable": true,
+            "advanced": true,
+            "parameterDescription": "Como exibir os horários disponíveis dos funcionários.",
+            "parameterName": "AGENDA_FORMATO_HORARIO",
+            "parameterValue": "[HORA_INICIO]"
+        },
+        {
+            "modifiable": true,
+            "advanced": true,
+            "parameterDescription": "Mudar para \"true\" caso deseja usar slots no agendamento.",
+            "parameterName": "AGENDA_USAR_SLOTS",
+            "parameterValue": "true"
+        },
+        {
+            "modifiable": true,
+            "advanced": true,
+            "parameterDescription": "Template para as opções de menu.",
+            "parameterName": "TEMPLATE_OPCOES_MENU",
+            "parameterValue": "[DESCRICAO_OPCAO]"
+        },
+        {
+            "modifiable": true,
+            "advanced": true,
+            "parameterDescription": "Colocar valor 'true' para bot enviar opções em lista.",
+            "parameterName": "BOT_USE_LIST",
+            "parameterValue": "true"
+        },
+        {
+            "modifiable": true,
+            "advanced": false,
+            "parameterDescription": "Mensagem após confirmação de presença",
+            "parameterName": "MENSAGEM_CONFIRMADO",
+            "parameterValue": "Que coisa linda!! Perfeito. Sua vaga está confirmada. De qualquer forma, no dia da consulta lhe mando outro lembrete.#break{2000} Obrigado é um prazer pra nós da saúde cuidar de você. #break{2000} Quer saber mais sobre Forquilhinha? Acesse https://forquilhinha.sc.gov.br/"
+        },
+        {
+            "modifiable": true,
+            "advanced": true,
+            "parameterDescription": "Evita a necessidade de perguntas que só tem uma opção de resposta",
+            "parameterName": "BOT_AUTO_SELECAO_SUBITEM",
+            "parameterValue": "true"
+        },
+        {
+            "modifiable": true,
+            "advanced": true,
+            "parameterDescription": "Título das opções dinamicas",
+            "parameterName": "TEMPLATE_LIST_TITLE",
+            "parameterValue": "#title{Menu;Por favor escolha uma opção}"
+        },
+        {
+            "modifiable": true,
+            "advanced": true,
+            "parameterDescription": "Mensagem quando não houver opções disponíveis",
+            "parameterName": "MENSAGEM_SEM_OPCOES",
+            "parameterValue": "Sem opções disponíveis"
+        },
+        {
+            "modifiable": true,
+            "advanced": false,
+            "parameterDescription": "Mensagem de desculpas quando robo é ofendido",
+            "parameterName": "MENSAGEM_DESCULPAS",
+            "parameterValue": "Desculpe se não consegui te ajudar melhor, mas infelizmente eu só consigo confirmar ou cancelar um agendamento. Não sou treinado para outras atividades."
+        },
+        {
+            "modifiable": true,
+            "advanced": false,
+            "parameterDescription": "Botões de opções para seguir com agendamento",
+            "parameterName": "BOTOES_AGENDAMENTO",
+            "parameterValue": "#break{2000} #BUTTONS--> #title{Por favor escolha uma das seguintes opções:} #button{Continuar com a  *MESMA DATA*} #button{Verificar horários em *OUTRA DATA*} #button{MENU INICIAL} --*"
+        },
+        {
+            "modifiable": true,
+            "advanced": false,
+            "parameterDescription": "Opção para ir ao menu inicial",
+            "parameterName": "MENU_INICIAL",
+            "parameterValue": "#break{2000} #BUTTONS--> #title{Ou você pode escolher👇🏻}  #button{MENU INICIAL} --*"
+        },
+        {
+            "modifiable": true,
+            "advanced": false,
+            "parameterDescription": "Mensagem exibida após agendamento",
+            "parameterName": "MENSAGEM_POS_AGENDAMENTO",
+            "parameterValue": "Ressalto que a consulta é intrasferível e apenas para o portador do CPF informado acima. #break{5000} Caso não possa comparecer, favor  cancelar seu agendamento, mas não encaminhar outra pessoa em seu lugar. #break{5000}  #break{4000} Seu atendimento será encerrado.  #break{3000}  #BUTTONS-->  #title{Caso não possa ir, basta clicar no botão abaixo 👇🏻}  #break{3000}  #button{CANCELAR AGENDAMENTO} --*  #break{3000}  Obrigado! É um prazer, pra nós da saúde, cuidar de você. Quer saber mais sobre Forquilhinha?  #break{3000} Acesse https://www.suaclinica.com.br"
+        },
+        {
+            "modifiable": true,
+            "advanced": true,
+            "parameterDescription": "Mensagem quando o robo de atendimento não entende algo que o usuário disse.",
+            "parameterName": "MENSAGEM_FALLBACK",
+            "parameterValue": "Desculpe, mas não compreendi sua resposta. Por favor tente novamente. #BUTTONS--> #title{Voltar ao inicio?} #button{MENU INICIAL} --*"
+        },
+        {
+            "modifiable": true,
+            "advanced": false,
+            "parameterDescription": "Mensagem de simulação do lembrete",
+            "parameterName": "MENSAGEM_LEMBRETE",
+            "parameterValue": "Olá, estou confirmando sua consulta com o dentista às 14:00h no Posto de Saúde Central de Forquilhinha. #BUTTONS--> #title{Algum imprevisto ou podemos manter a consulta?} #button{Confirmar, eu vou sim} #button{Cancelar, eu não vou} --*"
+        },
+        {
+            "modifiable": true,
+            "advanced": false,
+            "parameterDescription": "Mensagem de boas vindas e menu inicial do robo",
+            "parameterName": "MENSAGEM_INICIAL",
+            "parameterValue": "Qual atendimento você precisa? Lembre-se que esse agendamento é para a sua unidade de saúde.  #BUTTONS--> #title{Moradores de outras regiões não serão atendidos.} #button{Agendamentos} #button{Cancelamentos} --*"
+        },
+        {
+            "modifiable": true,
+            "advanced": true,
+            "parameterDescription": "Formato para lista de itens da agenda",
+            "parameterName": "TEMPLATE_MEETING_LIST",
+            "parameterValue": "[DATA_AGENDA] [HORA_INICIO]: [TITULO]"
+        },
+        {
+            "modifiable": true,
+            "advanced": true,
+            "parameterDescription": "Usar lista para modelos vazios",
+            "parameterName": "USE_LIST_EMPTY",
+            "parameterValue": "true"
+        },
+        {
+            "modifiable": true,
+            "advanced": true,
+            "parameterDescription": "Token de acesso api do cliente-tenent",
+            "parameterName": "TOKEN",
+            "parameterValue": "a0f77bdb-4b11-4c31-82be-0b87e1796c26"
+        }
+    ],
+    "limits": {
+        "customersCount": 100,
+        "messagesCount": 1500
+    }
+}

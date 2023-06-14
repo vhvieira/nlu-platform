@@ -41,6 +41,7 @@ services:
       GOOGLE_APPLICATION_CREDENTIALS: /credentials/default.json
       AUDIO_PATH: gs://lifty-file-storage/audios/
       BOTS_CACHE_LOCATION: /config/bots/
+      LOCAL_BOTS: local
       spring.profiles.active: dev
     ports:
       - 8081:8081
