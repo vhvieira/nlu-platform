@@ -23,6 +23,50 @@ Os modelos dinamicos são acessados clicando no botão abaixo:
 E podem ser facilmente editados em formato de arvore de dados conforme imagem abaixo:
 ![MODELS_DATA](./images/dinamicModelsData.jpg)
 
+
+### inputActionModel ####
+Assim com em Input model essa tag cria uma lista dinamica de produtos, ou opções dinamicas para o usuário escolher.
+A diferença é que a lista vem de outra intent do Dialogflow, e o fluxo chama essa intent para obter o modelo.
+Isso permitir fazer integrações com sistemas externos para obter a lista de modelos dinamicos, ou mesmo simplesmente manter em uma intent diferente.
+**Como usar:**
+`#inputActionModel{ACTION_1}` onde **ACTION_1** é o nome da ação a ser chamada (nome do evento da mesma).
+O modelo dinamico deve retorna em um formato específico de JSON.
+
+Os modelos dinamicos formato de JSON esperado:
+```json
+{
+            "key": "0",
+            "data": {
+                "name": "Lista especialidades",
+                "type": "folder"
+            },
+            "children": [
+                {
+                    "key": "0-1",
+                    "data": {
+                        "name": "Clinica geral",
+                        "type": "text",
+                        "value": {
+                            "code": "1",
+                            "name": "Clinico geral"
+                        }
+                    }
+                },
+                {
+                    "key": "0-2",
+                    "data": {
+                        "name": "Pediatra",
+                        "type": "text",
+                        "value": {
+                            "code": "2",
+                            "name": "Pediatra"
+                        }
+                    }
+                }
+            ]
+        }
+```
+
 ### inputItem ####
 Geralmente utilizada para carrinhos de compras e deve sempre ser utilizada após o inputModel.
 Essa tag vai salvar o item no formato JSON para ser enviado para a API de Carrinho de compras.
