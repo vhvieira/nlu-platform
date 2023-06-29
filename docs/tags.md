@@ -75,7 +75,7 @@ Essa tag vai salvar o item no formato JSON para ser enviado para a API de Carrin
 ![INPUT_ITEM](./images/inputItem.jpg)
 
 **Como usar:**
-`#inputModel{0}` onde **0** é o indice do modelo dinamico
+`#inputItem{0}` onde **0** é o indice da lista de produtos para ser listada
 
 ### inputMeetings ###
 Geralmente utilizada para cancelar agendamentos para o telefone quando está sendo usada a agenda integrada da plataforma (Google Agenda).
@@ -93,6 +93,20 @@ E o telefone é setado para `#inputInternalVariable{conversationRequest.particip
 
 Abaixo está um exemplo de como inputMeetings é renderizado no whatsapp utilizando a Cloud API:
 ![INPUT_MEETINGS_EXAMPLE](./images/inputMeetingsExample.jpg)
+
+### sessionMeetings ####
+Essa tag deve ser usada para fluxos de confirmação de consulta onde a integração cria uma sessão.
+Para tal `createSessionOnSendingMsg` da coleção bot-integrations deve estar *true*
+Também é importante que na mensagem de disparo da integração, quer seja template ou simple message seja informado
+os seguintes campos:
+`meetingId` que contém o ID do agendamento.
+`meetingTitle` que contém a descrição (título) do agendamento.
+
+![SESSION_MEETING](./images/sessionMeeting.jpg)
+
+**Como usar:**
+`#sessionMeetings{0}` onde **0** é apenas um identificador interno.
+
 
 ### inputService ###
 Semelhante ao inputModel porém com a diferença que deve ser utilizado apenas para escolher o serviço que será agendado.
