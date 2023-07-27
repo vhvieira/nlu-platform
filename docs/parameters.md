@@ -58,6 +58,8 @@ Para alterar o comportamento basta incluir esses parametros no template e altera
 | USE_LIST_EMPTY     | Quando não encontrado nenhum item, retorna uma lista vazia se ativado          | false     |
 | AUTO_SELECT_SUBITEMS  | Quando ativado (true) auto seleciona itens com apenas um sub-item em sua lista de filhos   | false     |
 | BOT_REQUIRES_SESSION     | Quando ativado (true) faz o bot exigir uma comunicação anterior com o número, respondendo mensagens de números apenas após disparos iniciados pelo bot | false     |
+| REQUIRED_SESSION_ERROR     | Mensagem de erro quando bot exigir uma comunicação anterior com o número, e o número que entrou em contato não tem uma sessão ativa | empty (vazia) |
+| BOT_MESSAGE_SAVE | Quando ativado (true) faz o bot salvar na sessão todas mensagens enviadas e recebidas => Multi-atendedor | false     |
 | AGENDA_USAR_SLOTS     | Quanto ativado (true) exibe os horários disponíveis para agendamento como listas (combos)  | false     |
 
 ###Parametros de mensagens padrão
@@ -70,6 +72,7 @@ Para alterar essas mensagens basta incluir esses parametros no template e altera
 | MENSAGEM_SEM_OPCOES  | Mensagem que o robo exibe uando não existem opções a serem selecionadas  | Sem opções disponíveis  |
 | NO_TEXT_FOR_MODEL   | Quando não existe texto cadastrado para o modelo dinamico | (texto não cadastrado para opção) |
 | TEMPLATE_LIST_TITLE | Título da lista dinamica quando usa combo | #title{Menu;Escolha uma opção} |
+| NO_CHILDREN_FOR_INPUT_MODEL | Quando não existem opções para um modelo dinamico ou para uma sessionMeeting | Sem opções encontradas para o modelo.
 | DEFAULT_OPTION_MODEL_SUBITEMS | Titulo para o subitem da lista dinamica | Para opção escolhida: [OPCAO], por favor especifique uma das opções abaixo: |
 | SKIP_VALIDATION_WORDS | Caracteres ou palavras que não são validadas nas listas dinamicas, separadas por ; | # |
 | TEMPLATE_OPCOES_MENU | Define o template utilizado para as listas dinamicas, letra, separador e descrição | [LETRA_OPCAO] : [DESCRICAO_OPCAO] |
