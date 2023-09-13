@@ -83,7 +83,9 @@ Lista todos os agendamentos para o telefone informado.
 ![INPUT_MEETINGS](./images/inputMeetings.jpg)
 
 **Como usar:**
-`#inputMeetings{data, telefone}` onde **data** é a data inicial para buscar os agendamentos, e **telefone** é número de telefone que foi utilizado no processo de agendamento.
+`#inputMeetings{data, telefone, modelKey}` onde **data** é a data inicial para buscar os agendamentos, 
+e **telefone** é número de telefone que foi utilizado no processo de agendamento
+, e **modelKey** é o chave criada para o modelo para ser usada por tags de reply.
 
 Geralmente é combinado com outras tags internas como na imagem abaixo:
 ![INPUT_MEETINGS_COMBINADO](./images/inputMeetingsCombinado.jpg)
@@ -107,7 +109,29 @@ os seguintes campos:
 **Como usar:**
 `#sessionMeetings{0}` onde **0** é apenas um identificador interno.
 
+### sessionMeetings ####
+Essa tag deve ser usada para fluxos de confirmação de consulta onde a integração cria uma sessão.
+Para tal `createSessionOnSendingMsg` da coleção bot-integrations deve estar *true*
+Também é importante que na mensagem de disparo da integração, quer seja template ou simple message seja informado
+os seguintes campos:
+`meetingId` que contém o ID do agendamento.
+`meetingTitle` que contém a descrição (título) do agendamento.
 
+![SESSION_MEETING](./images/sessionMeeting.jpg)
+
+**Como usar:**
+`#sessionMeetings{0}` onde **0** é a chave do modelo para ser usada em tags de reply.
+
+### inputCode ####
+Essa tag deve ser usada para pegar um valor anterior com as tags #sessionMeeetings ou #inputModel.
+e buscar o código do valor selecionado e passar para uma variável do dialogflow que pode estar em outra intent.
+
+![INPUT_CODE](./images/inputCode.jpg)
+
+**Como usar:**
+`#inputCode{0}` onde **0** é a chave do modelo que foi usada em #sessionMeetings ou #inputMeetings.
+
+#inputCode{
 ### inputService ###
 Semelhante ao inputModel porém com a diferença que deve ser utilizado apenas para escolher o serviço que será agendado.
 
@@ -179,6 +203,14 @@ Retorna o título do serviço dinamico selecionado, de acordo com o cadastrado.
 **Como usar:**
 `#replyServiceName{0}` onde **0** é o indice do modelo dinamico (deve ser o mesmo indice do inputModel)
 
+### removeMeetingFromSession ###
+Tem dependencia direta com sessionMeetings, pois requer o uso anterior de sessionMeetings
+Essa tag deve ser usada no response text e vai chamar a bot-api para remover a meetingId da sessão.
+![REMOVE_MEETING_FROM_SESSION](./images/removeMeetingFromSession.jpg)
+
+
+**Como usar:**
+`#removeMeetingFromSession{0}` onde **0** é o id do modelo (deve ser o mesmo id do sessionMeetings)
 
 ## Rich output format Tags ##
 Essas tags são usadas para oferecer um formato de resposta rich para o usuárioo em todas as plataformas, como por exemplo: imagens, vídeos, botões de ações, entre outros.
@@ -229,7 +261,7 @@ Executa uma pausa e uma quebra de linha (mensagem) onde for encontrado.
 Utilizado para deixar o robo mais 'lento' e a conversa mais natural.
 
 **Como usar:**
-`#break[2000]` onde **2000** é o intervalo em milisegundos que o robo vai esperar.
+`#break{2000}` onde **2000** é o intervalo em milisegundos que o robo vai esperar.
 
 ### LIST ###
 Exibe uma lista de opções para o usuário selecionar de acordo com a plataforma conectada.

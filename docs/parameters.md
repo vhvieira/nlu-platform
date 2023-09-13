@@ -61,6 +61,7 @@ Para alterar o comportamento basta incluir esses parametros no template e altera
 | REQUIRED_SESSION_ERROR     | Mensagem de erro quando bot exigir uma comunicação anterior com o número, e o número que entrou em contato não tem uma sessão ativa | empty (vazia) |
 | BOT_MESSAGE_SAVE | Quando ativado (true) faz o bot salvar na sessão todas mensagens enviadas e recebidas => Multi-atendedor | false     |
 | AGENDA_USAR_SLOTS     | Quanto ativado (true) exibe os horários disponíveis para agendamento como listas (combos)  | false     |
+| AUTOCONF_OFFTIME_BOT     | Fluxo Autoconf apenas: Quanto ativado (true)  bot responde apenas após loja fechada  | false     |
 
 ###Parametros de mensagens padrão
 São mensagens comuns no fluxo de todos robos.
