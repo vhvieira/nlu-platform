@@ -236,8 +236,7 @@ Esse documento deve estar em uma URL pública usando HTTP ou HTTPS.
 ![DOCUMENT_EXAMPLE](./images/documentTag.jpg)
 
 **Como usar:**
-`#document{URL}` onde **URL** é o endereço público e completo da imagem
-
+`#document{URL}` onde **URL** é o endereço público e completo da imagem do documento
 
 ### VIDEO ###
 Envia uma vídeo no canal (Whatsapp/Web/Etc).
@@ -245,8 +244,14 @@ Essa vídeo deve estar em uma URL pública usando YouTube.
 
 ![VIDEO_EXAMPLE](./images/videoExample.jpg)
 
+### LINK ###
+Envia um link com previsualização no canal (Whatsapp/Web/Etc).
+Esse link pode ser um site ou um video do YouTube.
+
+![LINK_EXAMPLE](./images/linkExample.jpg)
+
 **Como usar:**
-`#video{URL}` onde **URL** é o endereço público do vídeo no YouTube.
+`#link{URL}` onde **URL** é o endereço público do site ou vídeo no YouTube.
 
 ### AUDIO ###
 Envia um audio no canal (Whatsapp/Web/Etc).
