@@ -220,14 +220,24 @@ Geralmente são metatags utilizadas dentro do retorno (response) das intents do 
 
 ![RICH_OUTPUT](./images/richOutput.jpg)
 
-### IMAGEM ###
+### IMAGE ###
 Envia uma imagem no canal (Whatsapp/Web/Etc).
 Essa imagem deve estar em uma URL pública usando HTTP ou HTTPS.
 
 ![IMAGE_EXAMPLE](./images/imageExample.jpg)
 
 **Como usar:**
-`#IMAGEM{URL}` onde **URL** é o endereço público e completo da imagem
+`#image{URL}` onde **URL** é o endereço público e completo da imagem
+
+### DOCUMENT ###
+Envia um documento anexo no canal (Whatsapp/Web/Etc).
+Esse documento deve estar em uma URL pública usando HTTP ou HTTPS.
+
+![DOCUMENT_EXAMPLE](./images/documentTag.jpg)
+
+**Como usar:**
+`#document{URL}` onde **URL** é o endereço público e completo da imagem
+
 
 ### VIDEO ###
 Envia uma vídeo no canal (Whatsapp/Web/Etc).
