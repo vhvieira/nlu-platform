@@ -59,9 +59,20 @@ Para alterar o comportamento basta incluir esses parametros no template e altera
 | AUTO_SELECT_SUBITEMS  | Quando ativado (true) auto seleciona itens com apenas um sub-item em sua lista de filhos   | false     |
 | BOT_REQUIRES_SESSION     | Quando ativado (true) faz o bot exigir uma comunicação anterior com o número, respondendo mensagens de números apenas após disparos iniciados pelo bot | false     |
 | REQUIRED_SESSION_ERROR     | Mensagem de erro quando bot exigir uma comunicação anterior com o número, e o número que entrou em contato não tem uma sessão ativa | empty (vazia) |
-| BOT_MESSAGE_SAVE | Quando ativado (true) faz o bot salvar na sessão todas mensagens enviadas e recebidas => Multi-atendedor | false     |
+| BOT_MESSAGE_SAVE | Quando ativado (true) faz o bot salvar na sessão todas mensagens enviadas e recebidas => Multi-atendedor | true     |
 | AGENDA_USAR_SLOTS     | Quanto ativado (true) exibe os horários disponíveis para agendamento como listas (combos)  | false     |
 | AUTOCONF_OFFTIME_BOT     | Fluxo Autoconf apenas: Quanto ativado (true)  bot responde apenas após loja fechada  | false     |
+
+###Configurações de conexão por canal
+São configurações do canal que podem alterar a maneira como o robo funciona naquele canal.
+Para alterar essas configurações é necessário alterar a documento de integração na collection bot-integrations
+
+
+| Parametro     | Description    | Default |
+| -----------   | -----------   | --------  |
+| createSessionOnSendingMsg | Quando ativado (true) sempre cria uma sessão em banco de dados ao realizar disparos | false |
+| enableConfirmationMsgQueue | Quando ativado (true) ativa o sistema de fila de confirmações aguardando uma confirmação pra enviar a próxima | false |
+| saveContextIdOnResponse   | Quando ativado (true) salva o id da conversação-contexto após o disparo de uma mensagem | false |
 
 ###Parametros de mensagens padrão
 São mensagens comuns no fluxo de todos robos.
@@ -78,3 +89,11 @@ Para alterar essas mensagens basta incluir esses parametros no template e altera
 | SKIP_VALIDATION_WORDS | Caracteres ou palavras que não são validadas nas listas dinamicas, separadas por ; | # |
 | TEMPLATE_OPCOES_MENU | Define o template utilizado para as listas dinamicas, letra, separador e descrição | [LETRA_OPCAO] : [DESCRICAO_OPCAO] |
 | ITEM_DESCRIPTION | Para fluxos que usam o carrinho de compras, formata a exibição dos itens no mesmo | [ITEM_NOME] - Quantidade: [ITEM_QUANTIDADE] - Valor: R$ [ITEM_VALOR] |
+
+###Funções de formatação de parametros
+São funções especiais que podem ser usadas para formatar alguns tipos de parametros como datas.
+São úteis especialmente para integrações com APIs que esperam parametros em formatos não universais (UTC).
+
+| Função     | Description    | Exemplo |
+| -----------   | -----------   | --------  |
+| #fdate | Formata Data/Hora do padrão UTC para um padrão qualquer. Recebe dois parametros, um com valor e outro com formato, sendo que o primeiro pode ser uma variável. Valores aceitos para formato: yyyy-MM-dd HH:mm:ss" | #fdate[${date}, dd/MM/yyyy]: Para formatar a data em dd/mm/aaaa. |

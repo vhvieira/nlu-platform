@@ -15,6 +15,9 @@ A renderização desse componente vai variar de acordo com o conector e o canal 
 
 **Como usar:**
 `#inputModel{0}` onde **0** é o indice do modelo dinamico utilizado.
+`#inputModel{0;#desc}` para guardar o label/descrição ao invés do código;
+`#inputModel{0;filterField}` para trazer uma lista filtrada por um parametro;
+`#inputModel{0;#desc;filterField}` para guardar o label/descrição com a lista filtrada;
 O modelo dinamico pode vir de um sistema externo ou pode ser mantido dentro do dashboard.
 
 Os modelos dinamicos são acessados clicando no botão abaixo:
@@ -23,6 +26,22 @@ Os modelos dinamicos são acessados clicando no botão abaixo:
 E podem ser facilmente editados em formato de arvore de dados conforme imagem abaixo:
 ![MODELS_DATA](./images/dinamicModelsData.jpg)
 
+### inputExternalModel ####
+Input external model cria uma lista dinamica de produtos, ou opções dinamicas para o usuário escolher.
+Ele pode ser exibido como uma lista com letras A, B, C em caso de API não oficiais ou como um select em caso de API oficial whatsapp.
+A renderização desse componente vai variar de acordo com o conector e o canal utilizado.
+
+A diferença é que a lista vem de um endpoint externo, que pode ser um CRM ou ERP.
+
+**Como usar:**
+`#inputExternalModel-->0;1;2;3;4;5;6--*` onde:
+**0** é o endpoint a ser chamado.
+**1** é o método HTTP a ser chamado (Suporta apenas GET)
+**2** é o caminho do JSON que retorna código.
+**3** é o caminho do JSON que retorna label.
+**4** é o caminho do JSON que retorna price (opcional).
+**5** é o valor do filtro que será aplicado na lista (opcional).
+**6** é conteúdo é o indice do modelo dinamico utilizado (opcional -> default 0).
 
 ### inputActionModel ####
 Assim com em Input model essa tag cria uma lista dinamica de produtos, ou opções dinamicas para o usuário escolher.
@@ -316,6 +335,20 @@ Exibe uma lista de opções para o usuário selecionar de acordo com a plataform
 Onde **#BUTTONS-->** abre o componente e **--*** fechar o componente.
 Lembrando que cada botão é uma tag #button e contém o texto do botão
 E a tag #title contém o texto antes dos botões, que é um parametro obrigatório.
+
+### CLEAR TEMP CONTEXT ###
+As vezes é necessário usar um contexto temporário que deve ser apagado toda vez que a intent atual for
+re-executado, porém deve ser mantido em caso de follow-up.
+
+Ex: É a seleção de uma nova data no fluxo de agendamento.
+
+
+![CLEAR_TEMP_CONTEXT](./images/tag_cleartempcontext.jpg)
+
+**Como usar:**
+Criar um parametro que tem como prompt o valor *#cleanTempContext*
+
+E depois criar o contexto #TEMP para salvar os valores temporário em caso de re-execução da intent.
 
 ### FOREACH ###
 Pode varrer um array de resultados, e é útil onde existe integrações com sistemas externos que retornam um array de informações.
