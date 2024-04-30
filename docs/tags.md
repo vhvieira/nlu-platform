@@ -8,6 +8,7 @@ Essas tags devem ser usadas dentro do dialogflow como action and parameters.
 
 ![INPUT TAGS](./images/inputTags.jpg)
 
+inputTextToBot
 ### inputModel ####
 Input model cria uma lista dinamica de produtos, ou opções dinamicas para o usuário escolher.
 Ele pode ser exibido como uma lista com letras A, B, C em caso de API não oficiais ou como um select em caso de API oficial whatsapp.
@@ -42,6 +43,18 @@ A diferença é que a lista vem de um endpoint externo, que pode ser um CRM ou E
 **4** é o caminho do JSON que retorna price (opcional).
 **5** é o valor do filtro que será aplicado na lista (opcional).
 **6** é conteúdo é o indice do modelo dinamico utilizado (opcional -> default 0).
+
+
+### inputTextToBot ####
+InputTextToBot deve ser usado em conjunto com a tag inputTextToBot para salvar dados do modelo selecionado.
+Ele envia os valores para o motor NLU para ser armazenado em contextos / variáveis.
+
+**Como usar:**
+`#inputTextToBot{#code}` Envia o código do último dynamic model selecionado para o NLU Engine.
+`#inputTextToBot{#desc}` Envia a descrição do último dynamic model selecionado para o NLU Engine.
+`#inputTextToBot{#price}` Envia o preço do último dynamic model selecionado para o NLU Engine.
+Obs: Essa tag deve sempre ser usada após um #inputModel ou #inputExternalModel
+
 
 ### inputActionModel ####
 Assim com em Input model essa tag cria uma lista dinamica de produtos, ou opções dinamicas para o usuário escolher.
