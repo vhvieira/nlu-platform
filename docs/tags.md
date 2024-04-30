@@ -8,7 +8,7 @@ Essas tags devem ser usadas dentro do dialogflow como action and parameters.
 
 ![INPUT TAGS](./images/inputTags.jpg)
 
-inputTextToBot
+
 ### inputModel ####
 Input model cria uma lista dinamica de produtos, ou opções dinamicas para o usuário escolher.
 Ele pode ser exibido como uma lista com letras A, B, C em caso de API não oficiais ou como um select em caso de API oficial whatsapp.
@@ -43,7 +43,7 @@ A diferença é que a lista vem de um endpoint externo, que pode ser um CRM ou E
 **4** é o caminho do JSON que retorna price (opcional).
 **5** é o valor do filtro que será aplicado na lista (opcional).
 **6** é conteúdo é o indice do modelo dinamico utilizado (opcional -> default 0).
-
+![INPUT_EXTERNAL_MODEL](./images/inputExternalModel.png)
 
 ### inputTextToBot ####
 InputTextToBot deve ser usado em conjunto com a tag inputTextToBot para salvar dados do modelo selecionado.
@@ -53,8 +53,9 @@ Ele envia os valores para o motor NLU para ser armazenado em contextos / variáv
 `#inputTextToBot{#code}` Envia o código do último dynamic model selecionado para o NLU Engine.
 `#inputTextToBot{#desc}` Envia a descrição do último dynamic model selecionado para o NLU Engine.
 `#inputTextToBot{#price}` Envia o preço do último dynamic model selecionado para o NLU Engine.
-Obs: Essa tag deve sempre ser usada após um #inputModel ou #inputExternalModel
 
+Obs: Essa tag deve sempre ser usada após um #inputModel ou #inputExternalModel
+![INPUT_TEXT_TO_BOT](./images/inputTextToBot.png)
 
 ### inputActionModel ####
 Assim com em Input model essa tag cria uma lista dinamica de produtos, ou opções dinamicas para o usuário escolher.
@@ -349,14 +350,12 @@ Onde **#BUTTONS-->** abre o componente e **--*** fechar o componente.
 Lembrando que cada botão é uma tag #button e contém o texto do botão
 E a tag #title contém o texto antes dos botões, que é um parametro obrigatório.
 
-### CLEAR TEMP CONTEXT ###
+### CLEAN TEMP CONTEXT ###
 As vezes é necessário usar um contexto temporário que deve ser apagado toda vez que a intent atual for
 re-executado, porém deve ser mantido em caso de follow-up.
 
 Ex: É a seleção de uma nova data no fluxo de agendamento.
-
-
-![CLEAR_TEMP_CONTEXT](./images/tag_cleartempcontext.jpg)
+![CLEAR_TEMP_CONTEXT](./images/cleanTempContext.png)
 
 **Como usar:**
 Criar um parametro que tem como prompt o valor *#cleanTempContext*
